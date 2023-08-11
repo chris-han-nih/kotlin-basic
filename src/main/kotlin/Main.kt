@@ -10,6 +10,15 @@ fun main() {
 
     val (first, middle, last) = fullName()
     println("$first $middle $last")
+
+    val aToz: CharRange = 'a'..'z'
+    for (c in aToz) {
+        print(c)
+    }
+
+    for (n in 1..10) {
+        print(n)
+    }
 }
 
 fun fullName() = Triple("John", "Quincy", "Adams")
