@@ -19,3 +19,18 @@ val alpha = "A".."Z"
 var aToe: CharRange = 'a'..'e'
 ```
 
+### 정방향 반복
+> 정방향 반복은 다음과 같이 선언한다.
+```kotlin
+for (i in 1..10) {
+    println(i)
+}
+```
+
+### 역방향 반복
+> 역방향 반복은 다음과 같이 선언한다.
+```kotlin
+for (i in 10 downTo 1) {
+    println(i)
+}
+```

@@ -15,10 +15,17 @@ fun main() {
     for (c in aToz) {
         print(c)
     }
+    println()
 
     for (n in 1..10) {
         print(n)
     }
+    println()
+
+    for (n in 10 downTo 1) {
+        print(n)
+    }
+    println()
 }
 
 fun fullName() = Triple("John", "Quincy", "Adams")
