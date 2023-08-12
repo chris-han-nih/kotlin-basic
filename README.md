@@ -61,3 +61,7 @@ for (i in 10 downTo 1) {
     println(i)
 }
 ```
+---
+# Collections
+> Kotilin은 Java Collection으로 제공되는 Mutable Collection Interface View와 Immutable Collection Interface View를 제공한다.
+> 프로그램이 간단한 싱글 스페드라면 Mutable Collection Interface View를 사용하고, 멀티 스레드 환경이라면 Immutable Collection Interface View를 사용하는 것이 좋다.
