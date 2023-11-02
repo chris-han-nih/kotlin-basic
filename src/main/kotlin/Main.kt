@@ -1,21 +1,22 @@
 fun main(args: Array<String>){
-    println("Hello World!")
-    println("Number of processors: ${Util.numberOfProcessors()}")
-    val car = Car(2019, "")
-    car.color = "Red"
-    println("Car color: ${car.color}")
+    val items = listOf("apple", "banana", "kiwifruit")
+    for (item in items) {
+        println(item)
+    }
+
+    for (idx in items.indices) {
+        println("item at $idx is ${items[idx]}")
+    }
+
+    println(describe("hello"))
+    println(describe(200))
 }
 
-object Util {
-    fun numberOfProcessors() = Runtime.getRuntime().availableProcessors()
-}
-
-class Car(val yearOfMake: Int, color: String) {
-    var color = color
-        set(value) {
-            if (value.isBlank()) {
-                throw IllegalArgumentException("Color cannot be blank")
-            }
-            field = value
-        }
-}
+fun describe(obj: Any): String =
+    when (obj) {
+        1 -> "One"
+        "Hello" -> "Greeting"
+        is Long -> "Long"
+        !is String -> "Not a string"
+        else -> "Unknown"
+    }
