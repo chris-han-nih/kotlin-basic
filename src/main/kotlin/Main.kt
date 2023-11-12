@@ -1,22 +1,14 @@
-fun main(args: Array<String>){
-    val items = listOf("apple", "banana", "kiwifruit")
-    for (item in items) {
-        println(item)
-    }
-
-    for (idx in items.indices) {
-        println("item at $idx is ${items[idx]}")
-    }
-
-    println(describe("hello"))
-    println(describe(200))
+fun main(){
+    val player = Player("Madrigal")
+    println(player.name)
+    player.score = 10
+    player.score = -1
+    println(player.score)
 }
 
-fun describe(obj: Any): String =
-    when (obj) {
-        1 -> "One"
-        "Hello" -> "Greeting"
-        is Long -> "Long"
-        !is String -> "Not a string"
-        else -> "Unknown"
-    }
+class Player(val name: String) {
+    var score: Int = 0
+        set (value) {
+            if (value >= 0) field = value
+        }
+}
