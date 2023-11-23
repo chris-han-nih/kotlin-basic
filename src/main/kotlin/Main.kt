@@ -1,19 +1,22 @@
 fun main(){
-    val player = Player("Madrigal")
-    println(player.name)
-    player.score = 10
-    player.score = -1
-    println(player.score)
+    println(fizz)
+    println(fizz)
+    println(buzz)
+    println(buzz)
 
-    val message = "Hello Kotlin"
-    println(message.hidePassword())
+    println(Person.AGE.toString())
 }
 
-class Player(val name: String) {
-    var score: Int = 0
-        set (value) {
-            if (value >= 0) field = value
-        }
+fun calculate(): Int {
+    println("Calculating...")
+    return 1
 }
 
-fun String.hidePassword(): String = "*".repeat(this.length)
+val fizz = calculate()
+val buzz
+    get() = calculate()
+
+enum class Person {
+    NAME,
+    AGE,
+}
