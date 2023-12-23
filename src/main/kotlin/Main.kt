@@ -1,18 +1,17 @@
 fun main(){
-    println(Util.numberOfProcessors())
-    val (year, color) = useCarObject()
-    println("Year: $year, Color: $color")
+    MachineOperator("Mater").checkin()
+    println(MachineOperator.minimum())
+    println(MachineOperator.checkedIn)
+
+    val ref = MachineOperator.Companion
+    println(ref.checkedIn)
 }
 
-object Util {
-    fun numberOfProcessors() = Runtime.getRuntime().availableProcessors()
+class MachineOperator(val name: String) {
+    fun checkin() = checkedIn++
+    fun checkout() = checkedIn--
+    companion object {
+        var checkedIn = 0
+        fun minimum() = "15 minutes every 2 hours"
+    }
 }
-
-fun useCarObject(): Pair<Int, String> {
-    val car = Car(2019, "red")
-    val year = car.yearOfMake
-    val color = car.color
-    return year to color
-}
-
-class Car(val yearOfMake: Int, var color: String)
