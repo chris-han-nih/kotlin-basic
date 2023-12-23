@@ -1,7 +1,12 @@
-import machineoperator.MachineOperator
+import delegation.CSharpProgrammer
+import delegation.JavaProgrammer
+import delegation.Manager
 
-fun main(){
-    val operator1 = MachineOperator.create("John")
-    val operator2 = MachineOperator.create("Jane")
-    println("Checked in: ${MachineOperator.checkedIn}")
+fun main() {
+  val doe = Manager(CSharpProgrammer())
+  val roe = Manager(JavaProgrammer())
+  doe.work()
+  doe.meeting()
+  roe.work()
+  roe.meeting()
 }
